@@ -29,13 +29,19 @@ var paymentInitParams  = {correlationId: "correlation_id_1234",
  var aAdapter = window.vAdapters.com.google.androidPay.VisaPaymentAdapter;
  var aAdapterObj = new aAdapter(paymentInitParams);
 
+ var aPayArea = document.getElementById("aPay");
+ var sPayArea = document.getElementById("sPay");
+
  function apayCheck() {
+ 	aPayArea.innerHTML = '';
  	aAdapterObj.getWalletInfo()
  	.then(function(result) {
+ 		aPayArea.innerHTML = JSON.stringify(result);
  		console.log("result received from AndroidPay Adapter works!")
  		console.log(result);
 	})
  	.catch(function(error) {
+ 		aPayArea.innerHTML = JSON.stringify(error);
  		console.log("result received from AndroidPay Adapter does not work!");
  		console.log(error);
  	});
@@ -47,10 +53,13 @@ var sAdapter = window.vAdapters.samsungPay.VisaPaymentAdapter;
 var sAdapterObj = new sAdapter(paymentInitParams);
 
 function sPayCheck(){
+	sPayArea.innerHTML = '';
 	sAdapterObj.getWalletInfo().then(function(result){
+		sPayArea.innerHTML = JSON.stringify(result);
 		console.log('result received from SamsungPay Adapter works');
 		console.log(result);
 	}).catch(function(error){
+		sPayArea.innerHTML = JSON.stringify(error);
 		console.log('error received from SamsungPay Adapter does not work!');
 		console.log(error);
 	});
