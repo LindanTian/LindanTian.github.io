@@ -36,12 +36,12 @@ var paymentInitParams  = {correlationId: "correlation_id_1234",
  	aPayArea.innerHTML = '';
  	aAdapterObj.getWalletInfo()
  	.then(function(result) {
- 		aPayArea.innerHTML = "aPay works " + JSON.stringify(result);
+ 		aPayArea.innerHTML = JSON.stringify(result);
  		console.log("result received from AndroidPay Adapter works!")
  		console.log(result);
 	})
  	.catch(function(error) {
- 		aPayArea.innerHTML = "aPay error " + JSON.stringify(error);
+ 		aPayArea.innerHTML = JSON.stringify(error);
  		console.log("result received from AndroidPay Adapter does not work!");
  		console.log(error);
  	});
@@ -55,11 +55,11 @@ var sAdapterObj = new sAdapter(paymentInitParams);
 function sPayCheck(){
 	sPayArea.innerHTML = '';
 	sAdapterObj.getWalletInfo().then(function(result){
-		sPayArea.innerHTML = "sPay works " + JSON.stringify(result);
+		sPayArea.innerHTML = JSON.stringify(result);
 		console.log('result received from SamsungPay Adapter works');
 		console.log(result);
 	}).catch(function(error){
-		sPayArea.innerHTML = "sPay error " + JSON.stringify(error);
+		sPayArea.innerHTML = JSON.stringify(error);
 		console.log('error received from SamsungPay Adapter does not work!');
 		console.log(error);
 	});
