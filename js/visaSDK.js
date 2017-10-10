@@ -43,7 +43,7 @@ var paymentInitParams  = {correlationId: "correlation_id_1234",
 apayCheck();
 
 
-var sAdapter = window.vAdapters.samsungPay.VisaPaymentAdapter_alt;
+var sAdapter = window.vAdapters.samsungPay.VisaPaymentAdapter;
 var sAdapterObj = new sAdapter(paymentInitParams);
 
 function sPayCheck(){
