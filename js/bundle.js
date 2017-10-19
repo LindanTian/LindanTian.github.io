@@ -139,7 +139,7 @@ saveToPayUI.util.showQRModal = function (url) {
 	}).catch(_sweetalert2.default.noop);
 };
 
-saveToPayUI.successCall = function (response) {
+saveToPayUI.showWelcomeModal = function (response) {
 	if (!response || !response.welcomeUrl) {
 		saveToPayUI.util.showErrorModal('Service Unavailable', 'Save to SamsungPay service is currently unavailable!');
 		return;
@@ -157,13 +157,14 @@ saveToPayUI.successCall = function (response) {
 	}
 };
 
-saveToPayUI.errorCall = function () {
+saveToPayUI.showErrorModal = function () {
 	saveToPayUI.util.showErrorModal('Connection Issue', 'Failed to connect to Save to SamsungPay Services, please check your internet connections.');
 	//saveToPayUI.util.switchBtnTxt(SP.client.elements.btn, SP.conf.btnTxt);
 	//SP.client.elements.btn.disabled = false;
 };
 
-window.saveToPayUI = saveToPayUI;
+window.samsungPay = window.samsungPay || {};
+window.samsungPay.saveToPayUI = saveToPayUI;
 
 /***/ }),
 /* 1 */
