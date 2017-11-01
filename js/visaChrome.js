@@ -27,7 +27,7 @@ var paymentRequest = new PaymentRequest(
   .then((paymentResponse) => {
     // The user filled in the required fields and completed the flow
     // Get the details from `paymentResponse` and complete the transaction.
-
+    console.log("just to add breakpoint");
     return paymentResponse.complete();
   })
   .catch((err) => {
