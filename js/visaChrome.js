@@ -70,7 +70,7 @@ var startw3c = function() {
       supportedMethods: ['https://spay.samsung.com'],
       data: {
         productId: "697debcbb9f34940b791b0",
-        billingAddressRequired: true,
+        billingAddressRequired: false,
         merchantName: "payment-request-samsungpay",
         allowedCardNetworks: ["VISA", "MASTERCARD", "AMEX", "DISCOVER", "JCB", "DINERS_CLUB"],
         checkoutPartner: "VisaCheckout",
