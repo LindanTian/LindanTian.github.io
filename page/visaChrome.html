@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<head>
+	<h3>
+ 		Visa Checkout Payment Adapter Js test page For Chrome62 production
+	</h3>
+	<buton id="showBtn">
+		click to launch Pay app 
+	</buton>
+
+	<script src="/js/visaChrome.js"></script>
+	<script>
+		$("showBtn").addEventListener("click", function() {
+			console.log("launch paysheet");
+			window.startw3c();
+		});	
+	</script>
+	
+ </html>	
