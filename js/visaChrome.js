@@ -66,7 +66,7 @@ var startw3c = function() {
   const supportedPaymentMethods = [
     //creditCardPaymentMethod, 
     {
-      supportedMethods: ['https://ecomm.mpay.samsung.com/ew/v1/vco/w3c'],
+      supportedMethods: ['https://spay.samsung.com'],
       data: paymentRequestData
     }
   ];
@@ -87,9 +87,9 @@ var startw3c = function() {
   const options = {};
 
   var paymentRequest = new PaymentRequest(
-    //supportedPaymentMethods,
+    supportedPaymentMethods,
     //creditCardPaymentMethod,
-    test2,
+    //test2,
     paymentDetails,
     options
   );
