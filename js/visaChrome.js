@@ -69,7 +69,7 @@ var startw3c = function() {
     {
       //https://ecomm.mpay.samsung.com/ew/v1/vco/w3c
       //https://spay.samsung.com
-      supportedMethods: ['https://spay.samsung.com'],
+      supportedMethods: ['https://ecomm.mpay.samsung.com/ew/v1/vco/w3c'],
       data: {
         productId: "697debcbb9f34940b791b0",
         billingAddressRequired: false,
