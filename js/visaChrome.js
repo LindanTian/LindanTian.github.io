@@ -72,46 +72,54 @@ var startw3c = function() {
         productId: "697debcbb9f34940b791b0",
         billingAddressRequired: true,
         merchantName: "payment-request-samsungpay",
-        allowedCardNetworks: ["VISA", "MASTERCARD", "AMEX", "DISCOVER", "JCB", "DINERS_CLUB"]
+        allowedCardNetworks: ["VISA", "MASTERCARD", "AMEX", "DISCOVER", "JCB", "DINERS_CLUB"],
+        checkoutPartner: "VisaCheckout",
+        requestPayload: {
+          data: {
+            checkoutPaymentInfo: paymentInitParams,
+            visaIntentData: visaIntentData,
+            paymentInitParams: paymentInitParams
+          }
+        }
       }
     }
-  
-];
+
+  ];
 
 
 
-var paymentDetails = {
-  total: {
-    label: "Total due",
-    amount: {
-      currency: "USD",
-      value: 0
+  var paymentDetails = {
+    total: {
+      label: "Total due",
+      amount: {
+        currency: "USD",
+        value: 0
+      }
     }
-  }
-};
+  };
 
 
-const options = {};
+  const options = {};
 
-var paymentRequest = new PaymentRequest(
-  supportedPaymentMethods,
-  //creditCardPaymentMethod,
-  //test2,
-  paymentDetails,
-  options
-);
+  var paymentRequest = new PaymentRequest(
+    supportedPaymentMethods,
+    //creditCardPaymentMethod,
+    //test2,
+    paymentDetails,
+    options
+  );
 
-paymentRequest.show()
-  .then((paymentResponse) => {
-    // The user filled in the required fields and completed the flow
-    // Get the details from `paymentResponse` and complete the transaction.
-    console.log("just to add breakpoint");
-    return paymentResponse.complete();
-  })
-  .catch((err) => {
-    // The API threw an error or the user closed the UI
-    console.log(err);
-  });
+  paymentRequest.show()
+    .then((paymentResponse) => {
+      // The user filled in the required fields and completed the flow
+      // Get the details from `paymentResponse` and complete the transaction.
+      console.log("just to add breakpoint");
+      return paymentResponse.complete();
+    })
+    .catch((err) => {
+      // The API threw an error or the user closed the UI
+      console.log(err);
+    });
 }
 
 window.startw3c = startw3c;
