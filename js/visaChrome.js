@@ -1,7 +1,49 @@
 var startw3c = function() {
 
+  var paymentInitParams  = {correlationId: "correlation_id_1234",
+                      visitId: "visit_id_1234",
+                      locale: "en_US",
+                      collectShippingAddress: addBool,
+                      CheckoutPaymentInfo: {
+                        currencyCode :"USD",
+                        total:"38.97",
+                        buttonAction: btnAction
+                      },
+                      PaymentConstraints: {
+                        acceptedBillingCountries: ["US", "CA", "AU"],
+                        acceptedShippingCountries: [],
+                        acceptedCardBrands: ["VISA"],
+                        acceptCanadianVisaDebit: false
+                      },
+                      MerchantInfo: {
+                        displayName: "Merchant Samsung",
+                        logoUrl: "http://merchant.com/logo",
+                        websiteUrl: "http://merchant.com",
+                        customerSupportUrl: "http://merchant.com/customerservice",
+                        bannerDisplayName: "Banner",
+                        bannerURL: "http://merchant.com/banner",
+                        currencyFormat: "USD",
+                        countryCode: "US"
+                      }
+                    };
+  var visaIntentData =  "ew0KCSJyZWZlcmVuY2VVUkwiOiAiaHR0cDovL3d3dy5nb29nbGUuY29tIiwNCgkibWVyY2hhbnRBcGlLZXkiOiAiMEdLU1dLQTBaOEJLTEc0UlVBSjUxM0NHeG15RVRNWTBhUU41ZE5Yc3dlWlJQOXFTQSIsDQoJIm9yZGVySWQiOiAiTWFub2oxMjM0NSIsDQoJImV2ZW50U291cmNlIjogIkxpZ2h0Ym94VFciLA0KCSJjaGFubmVsIjogIldlYiIsDQoJImN1cnJlbmN5Q29kZSI6ICJVU0QiLA0KCSJzdWJ0b3RhbCI6ICI4MCIsDQoJInNoaXBwaW5nSGFuZGxpbmciOiAiNSIsDQoJInRheCI6ICI1IiwNCgkiZGlzY291bnQiOiAiNSIsDQoJImdpZnRXcmFwIjogIjEwIiwNCgkibWlzYyI6ICI1IiwNCgkidG90YWwiOiAiMTAwIiwNCgkicmV2aWV3TWVzc2FnZSI6ICJJbiBjb21wdXRpbmcsIHBsYWluIHRleHQgaXMgdGhlIGRhdGEgKCkiLA0KCSJtZXJjaGFudENvbmZpZyI6IHsNCgkJImV4dGVybmFsUHJvZmlsZUlkIjogIlRlc3QxIg0KCX0NCn0=";
+
+  var paymentRequestData = {
+    checkoutPartner: "VisaCheckout",
+    requestPayload: {
+      data: {
+        checkoutPaymentInfo: paymentInitParams,
+        visaIntentData: visaIntentData,
+        paymentInitParams: paymentInitParams
+      }
+    }
+  };
+
+
+
+
   const creditCardPaymentMethod = {
-    supportedMethods: 'basic-card',
+    //supportedMethods: 'basic-card',
     // data: {
     //   supportedNetworks: ['visa', 'mastercard', 'amex'],
     //   supportedTypes: ['credit', 'debit'],
@@ -9,12 +51,10 @@ var startw3c = function() {
   };
 
   const supportedPaymentMethods = [
-    creditCardPaymentMethod, {
+    //creditCardPaymentMethod, 
+    {
       supportedMethods: ['https://ecomm.mpay.samsung.com/ew/v1/vco/w3c'],
-      data: {
-        merchantIdentifier: "XXXX",
-        bobPaySpecificField: true
-      }
+      data: paymentRequestData
     }
   ];
 
