@@ -1,11 +1,19 @@
 var startw3c = function() {
-  const supportedPaymentMethods = [{
-  supportedMethods: ['https://ecomm.mpay.samsung.com/ew/v1/vco/w3c'],
+  // const supportedPaymentMethods = [{
+  // supportedMethods: ['https://ecomm.mpay.samsung.com/ew/v1/vco/w3c'],
+  // data: {
+  //   merchantIdentifier: "XXXX",
+  //   bobPaySpecificField: true
+  // }
+  // }];
+
+  const creditCardPaymentMethod = [{
+  supportedMethods: 'basic-card',
   data: {
-    merchantIdentifier: "XXXX",
-    bobPaySpecificField: true
-  }
-  }];
+    supportedNetworks: ['visa', 'mastercard', 'amex'],
+    supportedTypes: ['credit', 'debit'],
+  },
+}];
 
   var paymentDetails = {
     total: {
@@ -18,7 +26,8 @@ var startw3c = function() {
 const options = {};
 
 var paymentRequest = new PaymentRequest(
-  supportedPaymentMethods,
+  //supportedPaymentMethods,
+  creditCardPaymentMethod,
   paymentDetails,
   options
 );
