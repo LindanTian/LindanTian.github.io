@@ -3,11 +3,11 @@ var startw3c = function() {
   var paymentInitParams  = {correlationId: "correlation_id_1234",
                       visitId: "visit_id_1234",
                       locale: "en_US",
-                      collectShippingAddress: addBool,
+                      collectShippingAddress: false,
                       CheckoutPaymentInfo: {
                         currencyCode :"USD",
                         total:"38.97",
-                        buttonAction: btnAction
+                        buttonAction: 'nopay'
                       },
                       PaymentConstraints: {
                         acceptedBillingCountries: ["US", "CA", "AU"],
