@@ -51,9 +51,10 @@ var startw3c = function() {
     }
   };
 
+  var test1 = '[{"supportedMethods":["https:\/\/spay.samsung.com"],"data":{"productId":"697debcbb9f34940b791b0","billingAddressRequired":true,"merchantName":"payment-request-samsungpay","allowedCardNetworks":["VISA","MASTERCARD","AMEX","DISCOVER","JCB","DINERS_CLUB"]}},{"supportedMethods":["basic-card"],"data":{"supportedNetworks":["visa","mastercard","amex","discover","jcb","diners_club"]}}]';
 
-
-
+  var test2 = JSON.parse(test1);
+  console.log(test2);
   const creditCardPaymentMethod = {
     //supportedMethods: 'basic-card',
     // data: {
@@ -86,8 +87,9 @@ var startw3c = function() {
   const options = {};
 
   var paymentRequest = new PaymentRequest(
-    supportedPaymentMethods,
+    //supportedPaymentMethods,
     //creditCardPaymentMethod,
+    test2,
     paymentDetails,
     options
   );
