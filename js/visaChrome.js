@@ -2,10 +2,10 @@ var startw3c = function() {
 
   const creditCardPaymentMethod = {
     supportedMethods: 'basic-card',
-    data: {
-      supportedNetworks: ['visa', 'mastercard', 'amex'],
-      supportedTypes: ['credit', 'debit'],
-    },
+    // data: {
+    //   supportedNetworks: ['visa', 'mastercard', 'amex'],
+    //   supportedTypes: ['credit', 'debit'],
+    // },
   };
 
   const supportedPaymentMethods = [
