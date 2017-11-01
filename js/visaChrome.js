@@ -121,6 +121,7 @@ var startw3c = function() {
     .catch((err) => {
       // The API threw an error or the user closed the UI
       console.log(err);
+      document.getElementById("errRes").innerHTML = err;
     });
 }
 
